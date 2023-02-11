@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Chango");
+body {
+  background-color: rgb(248, 246, 246);
+  color: rgb(40, 40, 40);
+  font-family: "Chango", sans-serif;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div {
+  height: 40vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hidden {
+  opacity: 0;
+  filter: blur(90px);
+  transform: translateX(25%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(10%);
+  transition: all 0.8s;
+}
+
+.bullet {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.show .bullet:nth-child(1) {
+  color: rgb(187, 247, 186);
+  opacity: 1;
+  transform: translateX(5%);
+  transition: all 1s;
+}
+.show .bullet:nth-child(2) {
+  color: rgb(187, 247, 186);
+  opacity: 1;
+  transform: translateX(5%);
+  transition: all 1.1s;
+}
+.show .bullet:nth-child(3) {
+  color: rgb(187, 247, 186);
+  opacity: 1;
+  transform: translateX(5%);
+  transition: all 1.2s;
+}
+
+.showflex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: row wrap;
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(10%);
+  transition: all 0.8s;
 }
 
-.App-link {
-  color: #61dafb;
+.flexbreak {
+  flex-basis: 100%;
+  height: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.showflex .container {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  margin-top: 25px;
+  margin-right: 25px;
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(5%);
+  transition: all 0.8s;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.showflex .container:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 150px rgba(148, 148, 148, 0.5);
+  filter: blur(10px);
+}
+
+.showflex .container:nth-child(2) {
+  transition-delay: 1s;
+}
+.showflex .container:nth-child(3) {
+  transition-delay: 1.2s;
+}
+.showflex .container:nth-child(4) {
+  transition-delay: 1.4s;
+}
+.showflex .container:nth-child(5) {
+  transition-delay: 1.6s;
+}
+.showflex .container:nth-child(6) {
+  transition-delay: 1.8s;
+}
+.showflex .container:nth-child(7) {
+  transition-delay: 2s;
+}
+.showflex .container:nth-child(8) {
+  transition-delay: 2.2s;
+}
+.showflex .container:nth-child(9) {
+  transition-delay: 2.4s;
+}
+.showflex .container:nth-child(10) {
+  transition-delay: 2.6s;
+}
+.showflex .container:nth-child(11) {
+  transition-delay: 2.8s;
+}
+.showflex .container:nth-child(12) {
+  transition-delay: 3s;
+}
+.showflex .container:nth-child(13) {
+  transition-delay: 3.2s;
 }
