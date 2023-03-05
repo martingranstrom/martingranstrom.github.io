@@ -12,6 +12,8 @@ import dockerLogo from "./dockerLogo.svg";
 import dotnetLogo from "./dotnetLogo.svg";
 import nodeLogo from "./nodeLogo.svg";
 import pythonLogo from "./pythonLogo.svg";
+import mongoDbLogo from "./mongodbLogo.svg";
+import mugshot from "./mugshot.jpg";
 import useIntersect from "./useIntersect";
 
 function ShowIntersecting(entry, show) {
@@ -63,40 +65,124 @@ function IntersectBoxHorizontalBullets(props) {
         {props.title}
         <p className="flexbreak"></p>
         <span className="container">
-          <img src={logo} alt="logo" width="200px" height="200px" />
+          <img
+            className="compBadge"
+            src={logo}
+            alt="logo"
+            width="200px"
+            height="200px"
+          />
         </span>
         <span className="container">
-          <img src={azureLogo} alt="logo" width="130px" height="130px" />
+          <img
+            className="compBadge"
+            src={azureLogo}
+            alt="logo"
+            width="130px"
+            height="130px"
+          />
         </span>
         <span className="container">
-          <img src={cSharpLogo} alt="logo" width="123px" height="123px" />
+          <img
+            className="compBadge"
+            src={cSharpLogo}
+            alt="logo"
+            width="123px"
+            height="123px"
+          />
         </span>
         <span className="container">
-          <img src={cppLogo} alt="logo" width="220px" height="220px" />
+          <img
+            className="compBadge"
+            src={cppLogo}
+            alt="logo"
+            width="220px"
+            height="220px"
+          />
         </span>
         <span className="container">
-          <img src={jsLogo} alt="logo" width="200px" height="200px" />
+          <img
+            className="compBadge"
+            src={jsLogo}
+            alt="logo"
+            width="150px"
+            height="150px"
+            style={{ borderRadius: "20px" }}
+          />
+        </span>
+        <p className="flexbreak"></p>
+        <span className="container">
+          <img
+            className="compBadge"
+            src={blazorLogo}
+            alt="logo"
+            width="180px"
+            height="180px"
+          />
         </span>
         <span className="container">
-          <img src={blazorLogo} alt="logo" width="180px" height="180px" />
+          <img
+            className="compBadge"
+            src={terraformLogo}
+            alt="logo"
+            width="200px"
+            height="200px"
+          />
         </span>
         <span className="container">
-          <img src={terraformLogo} alt="logo" width="200px" height="200px" />
+          <img
+            className="compBadge"
+            src={bashLogo}
+            alt="logo"
+            width="200px"
+            height="200px"
+          />
         </span>
         <span className="container">
-          <img src={bashLogo} alt="logo" width="200px" height="200px" />
+          <img
+            className="compBadge"
+            src={dockerLogo}
+            alt="logo"
+            width="200px"
+            height="200px"
+          />
         </span>
         <span className="container">
-          <img src={dockerLogo} alt="logo" width="200px" height="200px" />
+          <img
+            className="compBadge"
+            src={nodeLogo}
+            alt="logo"
+            width="200px"
+            height="200px"
+          />
+        </span>
+        <p className="flexbreak"></p>
+        <span className="container">
+          <img
+            className="compBadge"
+            src={pythonLogo}
+            alt="logo"
+            width="200px"
+            height="200px"
+          />
         </span>
         <span className="container">
-          <img src={nodeLogo} alt="logo" width="200px" height="200px" />
+          <img
+            className="compBadge"
+            src={dotnetLogo}
+            alt="logo"
+            width="180px"
+            height="180px"
+          />
         </span>
         <span className="container">
-          <img src={pythonLogo} alt="logo" width="200px" height="200px" />
-        </span>
-        <span className="container">
-          <img src={dotnetLogo} alt="logo" width="180px" height="180px" />
+          <img
+            className="compBadge"
+            src={mongoDbLogo}
+            alt="logo"
+            width="180px"
+            height="180px"
+          />
         </span>
       </div>
     </>
@@ -106,24 +192,29 @@ function IntersectBoxHorizontalBullets(props) {
 function App() {
   return (
     <>
-      <div>Online CV</div>
-      <IntersectBoxVerticalBullets title={"Work experience"} bullets={[]} />
+      <div className="start">
+        <img
+          className="mugshot"
+          src={mugshot}
+          alt="mugshot"
+          width="250px"
+          height="250px"
+        />
+        <p>Martin Granström</p>
+      </div>
       <IntersectBoxVerticalBullets
-        title={"Work experience"}
+        title={"Arbetslivserfarenhet"}
+        bullets={["Zenuity (Zenseact)", "Collector Bank"]}
+      />
+      <IntersectBoxVerticalBullets
+        title={"Kompetenser"}
         bullets={["hej", "rek", "tre"]}
       />
       <IntersectBoxVerticalBullets
-        title={"Work experience"}
+        title={"Certifieringar"}
         bullets={["hej", "rek", "tre"]}
       />
-      <IntersectBoxVerticalBullets
-        title={"Work experience"}
-        bullets={["hej", "rek", "tre"]}
-      />
-      <IntersectBoxHorizontalBullets
-        title={"Competences"}
-        bullets={["hej", "rek", "tre"]}
-      />
+      <IntersectBoxHorizontalBullets title={"Teknisk kompetens"} />
     </>
   );
 }

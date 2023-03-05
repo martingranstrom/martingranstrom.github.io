@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Chango");
 body {
-  background-color: rgb(248, 246, 246);
-  color: rgb(40, 40, 40);
-  font-family: "Chango", sans-serif;
-  font-size: 30px;
+  background-image: url("background.jpg");
+  background-size: cover;
+  /*background-color: rgb(248, 246, 246);*/
+  color: rgb(223, 220, 220);
+  /*font-family: "Chango", sans-serif;*/
+  font-family: "Impact", sans-serif;
+  font-size: 60px;
   padding: 0;
   margin: 0;
 }
 
 div {
-  height: 40vh;
+  height: 80vh;
 }
 
 .hidden {
@@ -51,6 +54,7 @@ div {
 
 .showflex {
   display: flex;
+  flex-direction: row;
   flex-flow: row wrap;
   opacity: 1;
   filter: blur(0px);
@@ -61,6 +65,7 @@ div {
 .flexbreak {
   flex-basis: 100%;
   height: 0;
+  margin-top: -100px;
 }
 
 .container {
@@ -85,7 +90,7 @@ div {
   transition: all 0.8s;
 }
 
-img {
+.compBadge {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -95,7 +100,8 @@ img {
 .showflex .container:before {
   content: "";
   position: absolute;
-  background: inherit;
+  background: rgb(194, 194, 244);
+  opacity: 0.7;
   z-index: -1;
   top: 0;
   left: 0;
@@ -140,4 +146,30 @@ img {
 }
 .showflex .container:nth-child(13) {
   transition-delay: 3.2s;
+}
+.showflex .container:nth-child(14) {
+  transition-delay: 3.4s;
+}
+.showflex .container:nth-child(15) {
+  transition-delay: 3.6s;
+}
+.showflex .container:nth-child(16) {
+  transition-delay: 3.8s;
+}
+
+.start {
+  margin-top: 50px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.start p {
+  margin-left: 50px;
+}
+
+.mugshot {
+  border: 6px solid rgb(104, 95, 238);
+  margin-left: 50px;
+  border-radius: 50%;
 }
