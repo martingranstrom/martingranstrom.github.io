@@ -173,3 +173,22 @@ div {
   margin-left: 50px;
   border-radius: 50%;
 }
+
+.contacticon {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.contacticon:hover {
+  transform: rotate(-50deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.showContact {
+  font-size: 15px;
+  transform: scale(1);
+}
+
+.hideContact {
+  transform: scale(0);
+}

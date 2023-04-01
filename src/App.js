@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import logo from "./logo.svg";
 import azureLogo from "./azureLogo.svg";
@@ -14,6 +14,9 @@ import nodeLogo from "./nodeLogo.svg";
 import pythonLogo from "./pythonLogo.svg";
 import mongoDbLogo from "./mongodbLogo.svg";
 import mugshot from "./mugshot.jpg";
+import linkedinIcon from "./linkedinIcon.png";
+import phone from "./phone.png";
+import envelope from "./envelope.png";
 import useIntersect from "./useIntersect";
 
 function ShowIntersecting(entry, show) {
@@ -190,6 +193,21 @@ function IntersectBoxHorizontalBullets(props) {
 }
 
 function App() {
+  const [showContact, setShowContact] = useState(false);
+  const [contactInfo, setContactInfo] = useState("");
+  const [copy, setCopy] = useState("Click to copy!");
+
+  const copyOnClick = () => {
+    navigator.clipboard.writeText(contactInfo);
+    setCopy("Copied to clipboard!");
+  };
+
+  const handleMouseOut = () => {
+    setShowContact(false);
+    setContactInfo("");
+    setCopy("Click to copy!");
+  };
+
   return (
     <>
       <div className="start">
@@ -201,10 +219,56 @@ function App() {
           height="250px"
         />
         <p>Martin Granström</p>
+        <img
+          className="contacticon"
+          src={linkedinIcon}
+          alt="in"
+          width="50px"
+          height="50px"
+          onMouseOver={() => {
+            setShowContact(true);
+            setContactInfo(
+              "https://www.linkedin.com/in/martin-granström-33a1a5134/"
+            );
+          }}
+          onMouseOut={handleMouseOut}
+          onClick={copyOnClick}
+        />
+        <img
+          className="contacticon"
+          src={phone}
+          alt="in"
+          width="50px"
+          height="50px"
+          onMouseOver={() => {
+            setShowContact(true);
+            setContactInfo("0737120101");
+          }}
+          onMouseOut={handleMouseOut}
+          onClick={copyOnClick}
+        />
+        <img
+          className="contacticon"
+          src={envelope}
+          alt="in"
+          width="50px"
+          height="50px"
+          onMouseOver={() => {
+            setShowContact(true);
+            setContactInfo("martingranstrom@live.se");
+          }}
+          onMouseOut={handleMouseOut}
+          onClick={copyOnClick}
+        />
+        <p className={showContact ? "showContact" : "hideContact"}>
+          {copy}
+          <br></br>
+          {contactInfo}
+        </p>
       </div>
       <IntersectBoxVerticalBullets
         title={"Arbetslivserfarenhet"}
-        bullets={["Zenuity (Zenseact)", "Collector Bank"]}
+        bullets={["Zenseact AB", "Collector Bank AB"]}
       />
       <IntersectBoxVerticalBullets
         title={"Kompetenser"}
@@ -212,11 +276,18 @@ function App() {
       />
       <IntersectBoxVerticalBullets
         title={"Certifieringar"}
-        bullets={["hej", "rek", "tre"]}
+        bullets={[
+          "International Software Testing Qualifications Board (ISTQB) - Foundation level",
+        ]}
       />
       <IntersectBoxHorizontalBullets title={"Teknisk kompetens"} />
     </>
   );
 }
-
+//<input
+//  className={showContact ? "showNameInput" : "hideNameInput"}
+//  type="text"
+//  value={contactInfo}
+//  name="name"
+///>
 export default App;
