@@ -9,6 +9,8 @@ body {
   font-size: 60px;
   padding: 0;
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 div {
@@ -26,6 +28,7 @@ div {
   filter: blur(0px);
   transform: translateX(10%);
   transition: all 0.8s;
+  overflow: hidden;
 }
 
 .bullet {
@@ -33,23 +36,35 @@ div {
   transform: translateX(50%);
 }
 
-.show .bullet:nth-child(1) {
-  color: rgb(187, 247, 186);
+.show .bullet {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+  font-style: italic;
   opacity: 1;
   transform: translateX(5%);
+}
+
+.show .bullet:nth-child(1) {
   transition: all 1s;
 }
 .show .bullet:nth-child(2) {
-  color: rgb(187, 247, 186);
-  opacity: 1;
-  transform: translateX(5%);
-  transition: all 1.1s;
+  transition: all 1.3s;
 }
 .show .bullet:nth-child(3) {
-  color: rgb(187, 247, 186);
-  opacity: 1;
-  transform: translateX(5%);
-  transition: all 1.2s;
+  transition: all 1.6s;
+}
+
+.boxSection {
+  background-color: rgb(114, 114, 115);
+  box-shadow: -5px 5px 10px rgb(104, 95, 238);
+  border-radius: 30px;
+  height: fit-content;
+  min-width: 50%;
+  width: min-content;
+  border: 0px solid black;
+  padding: 15px;
+  margin: 20px;
 }
 
 .showflex {

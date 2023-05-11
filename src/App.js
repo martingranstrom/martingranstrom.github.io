@@ -53,7 +53,7 @@ function IntersectBoxVerticalBullets(props) {
     <>
       <div ref={ref}>
         {props.title}
-        {GetBullets(props.bullets)}
+        <div className="boxSection">{GetBullets(props.bullets)}</div>
       </div>
     </>
   );
@@ -268,11 +268,21 @@ function App() {
       </div>
       <IntersectBoxVerticalBullets
         title={"Arbetslivserfarenhet"}
-        bullets={["Zenseact AB", "Collector Bank AB"]}
+        bullets={[
+          "Collector Bank AB | 2020 - now",
+          "Zenseact AB | 2017 - 2020",
+        ]}
       />
       <IntersectBoxVerticalBullets
         title={"Kompetenser"}
-        bullets={["hej", "rek", "tre"]}
+        bullets={[
+          "hejhuihdwahdiahwpdahwpheguwnuiehufrehie456t7gujoigc",
+          "rek",
+          "tre",
+          "hej",
+          "rek",
+          "tre",
+        ]}
       />
       <IntersectBoxVerticalBullets
         title={"Certifieringar"}
@@ -284,10 +294,5 @@ function App() {
     </>
   );
 }
-//<input
-//  className={showContact ? "showNameInput" : "hideNameInput"}
-//  type="text"
-//  value={contactInfo}
-//  name="name"
-///>
+
 export default App;
