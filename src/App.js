@@ -39,6 +39,7 @@ function GetBullets(bullets) {
     res.push(
       <p className="bullet" key={i}>
         {bullets[i]}
+        <span class="extra">My hidden text that contains a lot of stuff!</span>
       </p>
     );
   }
@@ -267,25 +268,23 @@ function App() {
         </p>
       </div>
       <IntersectBoxVerticalBullets
-        title={"Arbetslivserfarenhet"}
+        title={"Work Experience"}
         bullets={[
           "Collector Bank AB | 2020 - now",
           "Zenseact AB | 2017 - 2020",
         ]}
       />
       <IntersectBoxVerticalBullets
-        title={"Kompetenser"}
+        title={"Skills"}
         bullets={[
           "hejhuihdwahdiahwpdahwpheguwnuiehufrehie456t7gujoigc",
           "rek",
           "tre",
           "hej",
-          "rek",
-          "tre",
         ]}
       />
       <IntersectBoxVerticalBullets
-        title={"Certifieringar"}
+        title={"Certifications"}
         bullets={[
           "International Software Testing Qualifications Board (ISTQB) - Foundation level",
         ]}
