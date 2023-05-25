@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import mugshot from "./images/mugshot.jpg";
 import linkedinIcon from "./images/linkedinIcon.png";
-import phone from "./images/phone.png";
 import envelope from "./images/envelope.png";
 import {
   IntersectBoxVerticalBullets,
@@ -53,19 +52,6 @@ function App() {
         />
         <img
           className="contacticon"
-          src={phone}
-          alt="in"
-          width="50px"
-          height="50px"
-          onMouseOver={() => {
-            setShowContact(true);
-            setContactInfo("0737120101");
-          }}
-          onMouseOut={handleMouseOut}
-          onClick={copyOnClick}
-        />
-        <img
-          className="contacticon"
           src={envelope}
           alt="in"
           width="50px"
@@ -93,12 +79,7 @@ function App() {
       />
       <IntersectBoxVerticalBullets
         title={"Skills"}
-        bullets={[
-          "hejhuihdwahdiahwpdahwpheguwnuiehufrehie456t7gujoigc",
-          "rek",
-          "tre",
-          "hej",
-        ]}
+        bullets={["hejhuihdwahdiahwpdahwphe", "rek", "tre"]}
         extras={[]}
       />
       <IntersectBoxVerticalBullets
