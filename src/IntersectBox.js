@@ -49,7 +49,7 @@ export function IntersectBoxVerticalBullets(props) {
   ShowIntersecting(entry, "show");
   return (
     <>
-      <div ref={ref}>
+      <div ref={ref} className="hidden">
         {props.title}
         <div className="boxSection">
           {GetBullets(props.bullets, props.extras)}
