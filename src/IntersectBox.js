@@ -64,7 +64,7 @@ export function IntersectBoxHorizontalBullets(props) {
   ShowIntersecting(entry, "showflex");
   return (
     <>
-      <div ref={ref}>
+      <div ref={ref} className="hidden">
         {props.title}
         <p className="flexbreak"></p>
         <span className="container">

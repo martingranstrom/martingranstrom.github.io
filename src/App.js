@@ -25,7 +25,7 @@ function App() {
   };
 
   return (
-    <>
+    <span className="main">
       <div className="start">
         <img
           className="mugshot"
@@ -35,40 +35,41 @@ function App() {
           height="250px"
         />
         <p>Martin Granström</p>
-        <img
-          className="contacticon"
-          src={linkedinIcon}
-          alt="in"
-          width="50px"
-          height="50px"
-          onMouseOver={() => {
-            setShowContact(true);
-            setContactInfo(
-              "https://www.linkedin.com/in/martin-granström-33a1a5134/"
-            );
-          }}
-          onMouseOut={handleMouseOut}
-          onClick={copyOnClick}
-        />
-        <img
-          className="contacticon"
-          src={envelope}
-          alt="in"
-          width="50px"
-          height="50px"
-          onMouseOver={() => {
-            setShowContact(true);
-            setContactInfo("martingranstrom@live.se");
-          }}
-          onMouseOut={handleMouseOut}
-          onClick={copyOnClick}
-        />
+
         <p className={showContact ? "showContact" : "hideContact"}>
           {copy}
           <br></br>
           {contactInfo}
         </p>
       </div>
+      <img
+        className="contacticon"
+        src={linkedinIcon}
+        alt="in"
+        width="50px"
+        height="50px"
+        onMouseOver={() => {
+          setShowContact(true);
+          setContactInfo(
+            "https://www.linkedin.com/in/martin-granström-33a1a5134/"
+          );
+        }}
+        onMouseOut={handleMouseOut}
+        onClick={copyOnClick}
+      />
+      <img
+        className="contacticon"
+        src={envelope}
+        alt="in"
+        width="50px"
+        height="50px"
+        onMouseOver={() => {
+          setShowContact(true);
+          setContactInfo("martingranstrom@live.se");
+        }}
+        onMouseOut={handleMouseOut}
+        onClick={copyOnClick}
+      />
       <IntersectBoxVerticalBullets
         title={"Work Experience"}
         bullets={[
@@ -90,7 +91,7 @@ function App() {
         extras={[]}
       />
       <IntersectBoxHorizontalBullets title={"Teknisk kompetens"} />
-    </>
+    </span>
   );
 }
 
