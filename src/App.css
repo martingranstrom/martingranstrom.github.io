@@ -220,13 +220,52 @@ html {
   position: sticky;
   top: 0;
   z-index: 100;
+  filter: invert(0);
   transform: rotate(0deg);
   transition: transform 0.2s ease-in-out;
 }
 
+svg {
+  -webkit-filter: drop-shadow(0px 3px 0px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 3px 0px rgba(0, 0, 0, 0.7));
+  transform: translateY(0px);
+  transition: all 0.2s ease-in-out;
+}
+
+svg:hover {
+  -webkit-filter: drop-shadow(0px 13px 2px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 13px 2px rgba(0, 0, 0, 0.7));
+  transform: translateY(-10px);
+}
+
+svg rect {
+  filter: invert(0);
+  transition: filter 0.2s ease-in-out;
+}
+
+svg:hover rect {
+  filter: invert(1);
+}
+
+svg:hover #linkedin {
+  filter: invert(32%) sepia(100%) saturate(884%) hue-rotate(170deg)
+    brightness(91%) contrast(103%);
+}
+
+svg:hover #github {
+  filter: invert(1);
+}
+
+svg:hover #email {
+  filter: invert(40%) sepia(36%) saturate(693%) hue-rotate(71deg)
+    brightness(96%) contrast(94%);
+}
+
 .contacticon:hover {
   transform: rotate(-50deg);
-  color: #fff;
+  fill: #0077b5;
+  filter: invert(32%) sepia(100%) saturate(884%) hue-rotate(170deg)
+    brightness(91%) contrast(103%);
   transition: transform 0.4s ease-in-out;
 }
 
