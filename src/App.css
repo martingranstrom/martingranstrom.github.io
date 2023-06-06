@@ -200,7 +200,7 @@ html {
 
 .start {
   margin-top: 50px;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-direction: row;
 }
@@ -223,6 +223,18 @@ html {
   filter: invert(0);
   transform: rotate(0deg);
   transition: transform 0.2s ease-in-out;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  height: 20vh;
+}
+
+li {
+  float: left;
+  margin-right: 5px;
 }
 
 svg {
