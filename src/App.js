@@ -9,20 +9,20 @@ import useIntersect from "./hooks/useIntersect";
 import { TopIcons, SideIcons } from "./ContactIcons";
 
 function App() {
-  const [ref, entry] = useIntersect({ threshold: 0 });
+  const [iconsRef, iconsEntry] = useIntersect({ threshold: 0.3 });
   const [showIconRight, setShowIconRight] = useState(false);
 
   useEffect(() => {
-    if (entry !== undefined) {
-      if (entry.target !== undefined) {
-        if (entry.isIntersecting) {
+    if (iconsEntry !== undefined) {
+      if (iconsEntry.target !== undefined) {
+        if (iconsEntry.isIntersecting) {
           setShowIconRight(false);
         } else {
           setShowIconRight(true);
         }
       }
     }
-  }, [entry]);
+  }, [iconsEntry]);
 
   return (
     <>
@@ -36,7 +36,7 @@ function App() {
         />
         <p>Martin Granström</p>
       </div>
-      <TopIcons reference={ref} />
+      <TopIcons reference={iconsRef} />
       <SideIcons showIconRight={showIconRight} />
 
       <IntersectBoxVerticalBullets
