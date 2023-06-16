@@ -50,7 +50,7 @@ export function IntersectBoxVerticalBullets(props) {
   return (
     <>
       <div ref={ref} className="hidden">
-        {props.title}
+        <h2>{props.title}</h2>
         <div className="boxSection">
           {GetBullets(props.bullets, props.extras)}
         </div>

@@ -34,9 +34,9 @@ function App() {
           width="250px"
           height="250px"
         />
-        <p>Martin Granström</p>
+        <h1 className="myName">Martin Granström</h1>
+        <TopIcons reference={iconsRef} />
       </div>
-      <TopIcons reference={iconsRef} />
       <SideIcons showIconRight={showIconRight} />
 
       <IntersectBoxVerticalBullets

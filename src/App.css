@@ -1,17 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Chango");
 body,
 html {
-  background-image: url("images/background.jpg");
   background-size: 100vw;
-  /*background-color: rgb(29, 29, 29);*/
-  color: rgb(223, 220, 220);
+  background-color: rgb(243, 241, 241);
+  color: rgb(4, 4, 4);
   /*font-family: "Chango", sans-serif;*/
-  font-family: "Impact", sans-serif;
-  font-size: 60px;
+  font-family: Coolvetica_b, Helvetica, sans-serif;
+  /*font-family: "Impact", sans-serif;*/
+  font-size: 40px;
   padding: 0;
   margin: 0;
   max-width: 100%;
   overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .hidden {
@@ -28,6 +32,44 @@ html {
   height: 100vh;
   transform: translateX(10%);
   transition: all 0.8s;
+}
+h2 {
+  position: relative;
+}
+h2::after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  bottom: -10px;
+  margin: 0 auto;
+  left: 0;
+  width: 1rem;
+  background: green;
+
+  /* optional animation */
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.show h2::after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  bottom: 0px;
+  margin: 0 auto;
+  left: 0;
+  width: 10rem;
+  background: green;
+  overflow: hidden;
+
+  /* optional animation */
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .hidden .bullet {
@@ -199,23 +241,26 @@ html {
 }
 
 .start {
-  margin-top: 50px;
-  height: 40vh;
-  display: flex;
-  flex-direction: row;
-}
-
-.start p {
-  margin-left: 50px;
+  /*border: 6px solid rgb(13, 13, 13);*/
+  height: 80vh;
+  /*display: flex;
+  justify-content: center;
+  align-items: center; /* To align vertically, if needed */
+  text-align: center;
 }
 
 .mugshot {
   border: 6px solid rgb(104, 95, 238);
-  margin-left: 50px;
   border-radius: 50%;
+  margin-top: 50px;
+}
+
+h1 {
+  margin: 10px;
 }
 
 ul {
+  display: inline-block;
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
@@ -280,6 +325,7 @@ svg rect {
 
 svg:hover rect {
   filter: invert(1);
+  cursor: pointer;
 }
 
 svg:hover #linkedin {
@@ -294,4 +340,5 @@ svg:hover #github {
 svg:hover #email {
   filter: invert(40%) sepia(36%) saturate(693%) hue-rotate(71deg)
     brightness(96%) contrast(94%);
+  cursor: pointer;
 }
