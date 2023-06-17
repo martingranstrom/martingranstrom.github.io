@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Chango");
+
+:root {
+  --timeline-progress: 0%;
+}
+
 body,
 html {
   background-size: 100vw;
@@ -43,7 +48,7 @@ h2::after {
   bottom: -10px;
   margin: 0 auto;
   left: 0;
-  width: 1rem;
+  width: 5rem;
   background: green;
 
   /* optional animation */
@@ -341,4 +346,25 @@ svg:hover #email {
   filter: invert(40%) sepia(36%) saturate(693%) hue-rotate(71deg)
     brightness(96%) contrast(94%);
   cursor: pointer;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  height: var(--timeline-progress);
+  width: 5px;
+  background-color: blue;
+  border-radius: 5px;
+  box-shadow: 0 0 30px blue, 0 0 5px blue, 0 0 5px blue;
+  top: 0;
+  bottom: 0;
+  margin-left: 5%;
 }

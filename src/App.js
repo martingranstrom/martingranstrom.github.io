@@ -8,6 +8,18 @@ import {
 import useIntersect from "./hooks/useIntersect";
 import { TopIcons, SideIcons } from "./ContactIcons";
 
+function moveTimeline() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.documentElement.style.setProperty(
+    "--timeline-progress",
+    scrolled + "%"
+  );
+}
+
 function App() {
   const [iconsRef, iconsEntry] = useIntersect({ threshold: 0.3 });
   const [showIconRight, setShowIconRight] = useState(false);
@@ -24,6 +36,10 @@ function App() {
     }
   }, [iconsEntry]);
 
+  window.onscroll = function () {
+    moveTimeline();
+  };
+
   return (
     <>
       <div className="start">
@@ -38,28 +54,29 @@ function App() {
         <TopIcons reference={iconsRef} />
       </div>
       <SideIcons showIconRight={showIconRight} />
-
-      <IntersectBoxVerticalBullets
-        title={"Work Experience"}
-        bullets={[
-          "Collector Bank AB | 2020 - now",
-          "Zenseact AB | 2017 - 2020",
-        ]}
-        extras={["Collector extra", "zenuity extra"]}
-      />
-      <IntersectBoxVerticalBullets
-        title={"Skills"}
-        bullets={["hejhuihdwahdiahwpdahwphe", "rek", "tre"]}
-        extras={[]}
-      />
-      <IntersectBoxVerticalBullets
-        title={"Certifications"}
-        bullets={[
-          "International Software Testing Qualifications Board (ISTQB) - Foundation level",
-        ]}
-        extras={[]}
-      />
-      <IntersectBoxHorizontalBullets title={"Teknisk kompetens"} />
+      <div className="timeline" id="timelinez">
+        <IntersectBoxVerticalBullets
+          title={"Work Experience"}
+          bullets={[
+            "Collector Bank AB | 2020 - now",
+            "Zenseact AB | 2017 - 2020",
+          ]}
+          extras={["Collector extra", "zenuity extra"]}
+        />
+        <IntersectBoxVerticalBullets
+          title={"Skills"}
+          bullets={["hejhuihdwahdiahwpdahwphe", "rek", "tre"]}
+          extras={[]}
+        />
+        <IntersectBoxVerticalBullets
+          title={"Certifications"}
+          bullets={[
+            "International Software Testing Qualifications Board (ISTQB) - Foundation level",
+          ]}
+          extras={[]}
+        />
+        <IntersectBoxHorizontalBullets title={"Teknisk kompetens"} />
+      </div>
     </>
   );
 }
