@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Chango");
 
 :root {
+  --timeline-arrow-color: rgb(0, 0, 0);
   --timeline-progress: 0%;
 }
 
@@ -261,7 +262,11 @@ h2::after {
 }
 
 h1 {
-  margin: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+h3 {
+  margin: 0px 0px 10px 0px;
 }
 
 ul {
@@ -307,7 +312,8 @@ ul {
 
 li {
   float: left;
-  margin-right: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 svg {
@@ -348,23 +354,50 @@ svg:hover #email {
   cursor: pointer;
 }
 
-/* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* The actual timeline (the vertical ruler) */
+.timeline::before {
+  content: "\2193";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  color: var(--timeline-arrow-color);
+  transform: translateX(-50%);
+  transition: color 1s;
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: translate(-50%, 0px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, 10px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, 0px);
+    opacity: 0.4;
+  }
+}
+
 .timeline::after {
   content: "";
   position: absolute;
   height: var(--timeline-progress);
-  width: 5px;
-  background-color: blue;
+  width: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 30px blue, 0 0 5px blue, 0 0 5px blue;
+  background-color: black;
+  /*background-color: blue;
+  box-shadow: 0 0 10px blue, 0 0 5px blue, 0 0 5px blue;*/
   top: 0;
   bottom: 0;
-  margin-left: 5%;
+  left: 50%;
+  margin-left: -5px;
 }

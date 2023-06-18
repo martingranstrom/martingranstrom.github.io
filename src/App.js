@@ -18,6 +18,18 @@ function moveTimeline() {
     "--timeline-progress",
     scrolled + "%"
   );
+
+  if (scrolled === 0) {
+    document.documentElement.style.setProperty(
+      "--timeline-arrow-color",
+      "rgb(0, 0, 0, 1)"
+    );
+  } else {
+    document.documentElement.style.setProperty(
+      "--timeline-arrow-color",
+      "rgb(0, 0, 0, 0)"
+    );
+  }
 }
 
 function App() {
@@ -50,7 +62,8 @@ function App() {
           width="250px"
           height="250px"
         />
-        <h1 className="myName">Martin Granström</h1>
+        <h1>Martin Granström</h1>
+        <h3>Software developer</h3>
         <TopIcons reference={iconsRef} />
       </div>
       <SideIcons showIconRight={showIconRight} />
