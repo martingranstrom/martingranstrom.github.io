@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import mugshot from "./images/mugshot.jpg";
-import {
-  IntersectBoxVerticalBullets,
-  IntersectBoxHorizontalBullets,
-} from "./IntersectBox.js";
+import { TimelineLeftItem } from "./IntersectBox.js";
 import useIntersect from "./hooks/useIntersect";
 import { TopIcons, SideIcons } from "./ContactIcons";
-
+/*"International Software Testing Qualifications Board (ISTQB) - Foundation level"*/
 function moveTimeline() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height =
@@ -68,27 +65,7 @@ function App() {
       </div>
       <SideIcons showIconRight={showIconRight} />
       <div className="timeline" id="timelinez">
-        <IntersectBoxVerticalBullets
-          title={"Work Experience"}
-          bullets={[
-            "Collector Bank AB | 2020 - now",
-            "Zenseact AB | 2017 - 2020",
-          ]}
-          extras={["Collector extra", "zenuity extra"]}
-        />
-        <IntersectBoxVerticalBullets
-          title={"Skills"}
-          bullets={["hejhuihdwahdiahwpdahwphe", "rek", "tre"]}
-          extras={[]}
-        />
-        <IntersectBoxVerticalBullets
-          title={"Certifications"}
-          bullets={[
-            "International Software Testing Qualifications Board (ISTQB) - Foundation level",
-          ]}
-          extras={[]}
-        />
-        <IntersectBoxHorizontalBullets title={"Teknisk kompetens"} />
+        <TimelineLeftItem />
       </div>
     </>
   );
