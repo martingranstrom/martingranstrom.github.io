@@ -66,6 +66,8 @@ function App() {
       <SideIcons showIconRight={showIconRight} />
       <div className="timeline" id="timelinez">
         <TimelineLeftItem />
+        <TimelineLeftItem />
+        <TimelineLeftItem />
       </div>
     </>
   );
