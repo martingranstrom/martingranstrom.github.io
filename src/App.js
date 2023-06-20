@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import mugshot from "./images/mugshot.jpg";
-import { TimelineLeftItem } from "./IntersectBox.js";
+import { TimelineLeftItem, TimelineRightItem } from "./IntersectBox.js";
 import useIntersect from "./hooks/useIntersect";
 import { TopIcons, SideIcons } from "./ContactIcons";
 /*"International Software Testing Qualifications Board (ISTQB) - Foundation level"*/
@@ -66,8 +66,9 @@ function App() {
       <SideIcons showIconRight={showIconRight} />
       <div className="timeline" id="timelinez">
         <TimelineLeftItem />
+        <TimelineRightItem />
         <TimelineLeftItem />
-        <TimelineLeftItem />
+        <TimelineRightItem />
       </div>
     </>
   );

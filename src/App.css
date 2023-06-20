@@ -8,7 +8,7 @@
 body,
 html {
   background-size: 100vw;
-  background-color: rgb(243, 241, 241);
+  background-color: rgb(126, 124, 124);
   color: rgb(4, 4, 4);
   /*font-family: "Chango", sans-serif;*/
   font-family: Coolvetica_b, Helvetica, sans-serif;
@@ -27,8 +27,8 @@ html {
 .show,
 .hidden {
   position: relative;
-  height: 40vh;
-  border: 6px black;
+  min-height: 40vh;
+  height: max-content;
 }
 
 h2 {
@@ -227,30 +227,6 @@ svg:hover #email {
   z-index: 0;
 }
 
-.container {
-  padding-left: 30px;
-  /*position: relative;*/
-  background-color: inherit;
-  width: 40%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  border: 4px solid #ff9f55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
 .hidden .ring::after {
   opacity: 1;
   transform: scale(0);
@@ -259,8 +235,6 @@ svg:hover #email {
 
 .show .ring::after {
   opacity: 1;
-  /*transform: scale(1);
-  transition: all 0.5s;*/
   animation: plopp 0.5s;
 }
 
@@ -276,6 +250,36 @@ svg:hover #email {
   }
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.left {
+  left: 0;
+}
+
+/*Arrow*/
+.left::before {
+  content: "";
+  height: 0;
+  position: absolute;
+  margin-top: 73px;
+  width: 0;
+  z-index: 1;
+  left: 40%;
+  margin-left: 5%;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
 .ring::after {
   content: "";
   position: absolute;
@@ -285,17 +289,35 @@ svg:hover #email {
   bottom: 0;
   left: 50%;
   margin-left: -19px;
-  margin-top: 50px;
+  margin-top: 65px;
   background-color: white;
   border: 4px solid #ff9f55;
-  top: 15px;
   border-radius: 50%;
   z-index: 1;
 }
 
 .content {
+  /*display: inline-block; to make parent size of child*/
+  position: relative;
   padding: 10px 20px;
+  margin-left: 5%;
+  top: 25px;
   background-color: white;
   position: relative;
-  border-radius: 6px;
+  width: 40%;
+  border-radius: 30px;
+}
+
+.hidden .content,
+.hidden .left::before {
+  opacity: 0;
+  transition: all 0.5.s;
+  transition-delay: 0.5s;
+}
+
+.show .content,
+.show .left::before {
+  opacity: 1;
+  transition: all 0.5s;
+  transition-delay: 0.5s;
 }

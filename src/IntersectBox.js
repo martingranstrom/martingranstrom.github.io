@@ -60,26 +60,33 @@ export function IntersectBoxVerticalBullets(props) {
 }
 
 export function TimelineLeftItem(props) {
-  const [ref, entry] = useIntersect({ threshold: 0.8 });
+  const [ref, entry] = useIntersect({ threshold: 0.7 });
   ShowIntersecting(entry, "show");
-  /*return (
-    <div ref={ref} className="hidden">
-      <div className="container left">
-        <div className="content">
-          <h2>2017</h2>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
-          </p>
-        </div>
-      </div>
-    </div>
-  );*/
   return (
     <div ref={ref} className="hidden">
       <div className="ring" />
+      <div className="container left">
+        <div className="content">
+          <h2>2017</h2>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function TimelineRightItem(props) {
+  const [ref, entry] = useIntersect({ threshold: 0.7 });
+  ShowIntersecting(entry, "show");
+  return (
+    <div ref={ref} className="hidden">
+      <div className="ring" />
+      <div className="container right">
+        <div className="content">
+          <h2>2017</h2>
+          <p>Lorem ipsum</p>
+        </div>
+      </div>
     </div>
   );
 }
