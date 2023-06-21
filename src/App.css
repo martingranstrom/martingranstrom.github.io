@@ -41,7 +41,7 @@ h2::after {
   bottom: -10px;
   margin: 0 auto;
   left: 0;
-  width: 5rem;
+  width: 2rem;
   background: green;
 
   /* optional animation */
@@ -58,7 +58,7 @@ h2::after {
   bottom: 0px;
   margin: 0 auto;
   left: 0;
-  width: 10rem;
+  width: 6rem;
   background: green;
   overflow: hidden;
 
@@ -260,9 +260,13 @@ svg:hover #email {
   left: 0;
 }
 
-/*Arrow*/
+.right {
+  left: 50%;
+}
+
+/*Arrows*/
 .left::before {
-  content: "";
+  content: " ";
   height: 0;
   position: absolute;
   margin-top: 73px;
@@ -275,9 +279,17 @@ svg:hover #email {
   border-color: transparent transparent transparent white;
 }
 
-/* Place the container to the right */
-.right {
-  left: 50%;
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  margin-top: 73px;
+  width: 0;
+  z-index: 1;
+  margin-left: 32px;
+  border: medium solid blue;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
 }
 
 .ring::after {
@@ -309,6 +321,7 @@ svg:hover #email {
 }
 
 .hidden .content,
+.hidden .right::before,
 .hidden .left::before {
   opacity: 0;
   transition: all 0.5.s;
@@ -316,6 +329,7 @@ svg:hover #email {
 }
 
 .show .content,
+.show .right::before,
 .show .left::before {
   opacity: 1;
   transition: all 0.5s;
