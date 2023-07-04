@@ -67,8 +67,8 @@ export function TimelineLeftItem(props) {
       <div className="ring" />
       <div className="container left">
         <div className="content">
-          <h2>2017</h2>
-          <p>Lorem ipsum</p>
+          <h2>{props.year}</h2>
+          <p>{props.content}</p>
         </div>
       </div>
     </div>
@@ -83,8 +83,8 @@ export function TimelineRightItem(props) {
       <div className="ring" />
       <div className="container right">
         <div className="content">
-          <h2>2017</h2>
-          <p>Lorem ipsum</p>
+          <h2>{props.year}</h2>
+          <p>{props.content}</p>
         </div>
       </div>
     </div>

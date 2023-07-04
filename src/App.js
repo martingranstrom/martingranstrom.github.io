@@ -65,10 +65,10 @@ function App() {
       </div>
       <SideIcons showIconRight={showIconRight} />
       <div className="timeline" id="timelinez">
-        <TimelineLeftItem />
-        <TimelineRightItem />
-        <TimelineLeftItem />
-        <TimelineRightItem />
+        <TimelineLeftItem year={"2020"} />
+        <TimelineRightItem year={"2017"} />
+        <TimelineLeftItem year={"2017"} />
+        <TimelineRightItem year={"2015"} />
       </div>
     </>
   );
