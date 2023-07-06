@@ -15,11 +15,11 @@ import pythonLogo from "./images/pythonLogo.svg";
 import mongoDbLogo from "./images/mongodbLogo.svg";
 import useIntersect from "./hooks/useIntersect";
 
-function GetPatch(text) {
-  if (text === null) {
+function Patch(props) {
+  if (props.text === undefined) {
     return <></>;
   }
-  return <div className="patch">text</div>;
+  return <div className="patch">{props.text}</div>;
 }
 
 function ShowIntersecting(entry, show) {
@@ -77,7 +77,7 @@ export function TimelineLeftItem(props) {
           <h2>{props.year}</h2>
           <h3 className="location">{props.location}</h3>
           <p className="info">{props.content}</p>
-          <div className="patch">Team Lead</div>
+          <Patch text={props.patch} />
         </div>
       </div>
     </div>
@@ -95,6 +95,7 @@ export function TimelineRightItem(props) {
           <h2>{props.year}</h2>
           <h3 className="location">{props.location}</h3>
           <p className="info">{props.content}</p>
+          <Patch text={props.patch} />
         </div>
       </div>
     </div>
