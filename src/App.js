@@ -68,10 +68,12 @@ function App() {
         <TimelineLeftItem
           year={"2020"}
           location={"Collector Bank - Gothenburg, Sweden"}
+          content={"Software developer"}
         />
         <TimelineRightItem
           year={"2017"}
           location={"Zenuity - Gothenburg, Sweden"}
+          content={"Software developer"}
         />
         <TimelineLeftItem
           year={"2017"}
