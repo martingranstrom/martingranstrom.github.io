@@ -68,7 +68,8 @@ export function TimelineLeftItem(props) {
       <div className="container left">
         <div className="content">
           <h2>{props.year}</h2>
-          <p>{props.content}</p>
+          <h3 className="location">{props.location}</h3>
+          <p className="info">{props.content}</p>
         </div>
       </div>
     </div>
@@ -84,7 +85,8 @@ export function TimelineRightItem(props) {
       <div className="container right">
         <div className="content">
           <h2>{props.year}</h2>
-          <p>{props.content}</p>
+          <h3 className="location">{props.location}</h3>
+          <p className="info">{props.content}</p>
         </div>
       </div>
     </div>

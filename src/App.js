@@ -60,15 +60,29 @@ function App() {
           height="250px"
         />
         <h1>Martin Granström</h1>
-        <h3>Software developer</h3>
+        <h3 className="title">Software developer</h3>
         <TopIcons reference={iconsRef} />
       </div>
       <SideIcons showIconRight={showIconRight} />
       <div className="timeline" id="timelinez">
-        <TimelineLeftItem year={"2020"} />
-        <TimelineRightItem year={"2017"} />
-        <TimelineLeftItem year={"2017"} />
-        <TimelineRightItem year={"2015"} />
+        <TimelineLeftItem
+          year={"2020"}
+          location={"Collector Bank - Gothenburg, Sweden"}
+        />
+        <TimelineRightItem
+          year={"2017"}
+          location={"Zenuity - Gothenburg, Sweden"}
+        />
+        <TimelineLeftItem
+          year={"2017"}
+          location={"Chalmers University of Technology - Gothenburg, Sweden"}
+          content={"MSc Biomedical Engineering"}
+        />
+        <TimelineRightItem
+          year={"2015"}
+          location={"Chalmers University of Technology - Gothenburg, Sweden"}
+          content={"BSc Mechatronics"}
+        />
       </div>
     </>
   );
