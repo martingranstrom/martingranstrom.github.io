@@ -51,6 +51,17 @@ function App() {
 
   return (
     <>
+      <ul className="navbar">
+        <li>
+          <a href="#home">About me</a>
+        </li>
+        <li>
+          <a href="#home">Skills</a>
+        </li>
+        <li>
+          <a href="#timelinez">Experience</a>
+        </li>
+      </ul>
       <div className="start">
         <img
           className="mugshot"
@@ -66,24 +77,28 @@ function App() {
       <SideIcons showIconRight={showIconRight} />
       <div className="timeline" id="timelinez">
         <TimelineLeftItem
-          year={"2020"}
-          location={"Collector Bank - Gothenburg, Sweden"}
+          company={"Collector Bank"}
+          location={"Gothenburg, Sweden | 2020 - Current"}
           content={"Software developer"}
           patch={"Team Lead"}
         />
         <TimelineRightItem
-          year={"2017"}
-          location={"Zenuity - Gothenburg, Sweden"}
+          company={"Zenuity"}
+          location={"Gothenburg, Sweden | 2017 - 2020"}
           content={"Software developer"}
         />
         <TimelineLeftItem
-          year={"2017"}
-          location={"Chalmers University of Technology - Gothenburg, Sweden"}
+          company={"MSc Biomedical Engineering"}
+          location={
+            "Chalmers University of Technology - Gothenburg, Sweden | 2015 - 2017"
+          }
           content={"MSc Biomedical Engineering"}
         />
         <TimelineRightItem
-          year={"2015"}
-          location={"Chalmers University of Technology - Gothenburg, Sweden"}
+          company={"BSc Mechatronics"}
+          location={
+            "Chalmers University of Technology - Gothenburg, Sweden | 2012 - 2015"
+          }
           content={"BSc Mechatronics"}
         />
       </div>

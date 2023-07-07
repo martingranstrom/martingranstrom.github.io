@@ -74,7 +74,7 @@ export function TimelineLeftItem(props) {
       <div className="ring" />
       <div className="container left">
         <div className="content">
-          <h2>{props.year}</h2>
+          <h2>{props.company}</h2>
           <h3 className="location">{props.location}</h3>
           <p className="info">{props.content}</p>
           <Patch text={props.patch} />
@@ -92,7 +92,7 @@ export function TimelineRightItem(props) {
       <div className="ring" />
       <div className="container right">
         <div className="content">
-          <h2>{props.year}</h2>
+          <h2>{props.company}</h2>
           <h3 className="location">{props.location}</h3>
           <p className="info">{props.content}</p>
           <Patch text={props.patch} />
