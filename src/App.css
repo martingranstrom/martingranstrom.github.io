@@ -19,6 +19,7 @@ html {
   margin: 0;
   max-width: 100%;
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -70,7 +71,7 @@ h2::after {
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
-  transition: 0.5s;
+  transition: 0.5s cubic-bezier(0.58, 0.02, 0.48, 0.08);
   transition-delay: 0.5s;
 }
 
@@ -96,7 +97,7 @@ h1 {
 .location {
   margin: 10px 0px 0px 0px;
   font-size: 25px;
-  font-weight: 5;
+  font-weight: lighter;
 }
 
 .title {
@@ -114,6 +115,20 @@ ul {
 .navbar {
   position: absolute;
   right: 0;
+  padding-top: 10px;
+  padding-right: 40px;
+}
+
+.navbar > li {
+  margin-left: 20px;
+}
+
+.navbar > li a {
+  color: aliceblue;
+  text-decoration: none;
+  font-family: Coolvetica_b, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .hideIconRight,

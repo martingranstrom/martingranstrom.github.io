@@ -53,13 +53,10 @@ function App() {
     <>
       <ul className="navbar">
         <li>
-          <a href="#home">About me</a>
+          <a href="#home">about me</a>
         </li>
         <li>
-          <a href="#home">Skills</a>
-        </li>
-        <li>
-          <a href="#timelinez">Experience</a>
+          <a href="#timelinez">experience</a>
         </li>
       </ul>
       <div className="start">
