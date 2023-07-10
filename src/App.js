@@ -6,11 +6,23 @@ import useIntersect from "./hooks/useIntersect";
 import { TopIcons, SideIcons } from "./ContactIcons";
 /*"International Software Testing Qualifications Board (ISTQB) - Foundation level"*/
 function moveTimeline() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
+  //var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  //var height =
+  //  document.documentElement.scrollHeight -
+  //  document.documentElement.clientHeight;
+  //var scrolled = (winScroll / height) * 100;
+
+  const timeline = document.getElementById("timelinez");
+  const viewportHeight = window.innerHeight;
+  const scrollTop = window.scrollY;
+  const elementOffsetTop = timeline.offsetTop;
+  const elementHeight = timeline.offsetHeight;
+
+  // Calculate percentage of the element that's been seen
+  const distance = scrollTop + viewportHeight - elementOffsetTop;
+  const percentage = distance / (elementHeight / 100);
+  const scrolled = Math.min(100, Math.max(0, percentage - 10));
+
   document.documentElement.style.setProperty(
     "--timeline-progress",
     scrolled + "%"
