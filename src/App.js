@@ -29,8 +29,24 @@ function moveTimeline() {
   }
 }
 
+function ShowIntersecting(entry, show) {
+  if (entry !== undefined) {
+    if (entry.target !== undefined) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(show);
+        entry.target.classList.remove("hidden");
+      } else {
+        entry.target.classList.add("hidden");
+        entry.target.classList.remove(show);
+      }
+    }
+  }
+}
+
 function App() {
   const [iconsRef, iconsEntry] = useIntersect({ threshold: 0.3 });
+  const [abtMeRef1, abtMeEntry1] = useIntersect({ threshold: 0.7 });
+  const [abtMeRef2, abtMeEntry2] = useIntersect({ threshold: 0.7 });
   const [showIconRight, setShowIconRight] = useState(false);
 
   useEffect(() => {
@@ -43,7 +59,10 @@ function App() {
         }
       }
     }
-  }, [iconsEntry]);
+    // Optimize
+    ShowIntersecting(abtMeEntry1, "show");
+    ShowIntersecting(abtMeEntry2, "show");
+  }, [iconsEntry, abtMeEntry1, abtMeEntry2]);
 
   window.onscroll = function () {
     moveTimeline();
@@ -53,7 +72,7 @@ function App() {
     <>
       <ul className="navbar">
         <li>
-          <a href="#home">about me</a>
+          <a href="#aboutMe">about me</a>
         </li>
         <li>
           <a href="#timelinez">experience</a>
@@ -70,8 +89,19 @@ function App() {
         <h1>Martin Granström</h1>
         <h3 className="title">Software developer</h3>
         <TopIcons reference={iconsRef} />
+        <span className="scrollDown" />
       </div>
       <SideIcons showIconRight={showIconRight} />
+      <section className="aboutMeContainer" id="aboutMe">
+        <div ref={abtMeRef1} className="aboutMeChild hidden">
+          <h3>about me</h3>
+          this is some info about me
+        </div>
+        <div ref={abtMeRef2} className="aboutMeChild hidden">
+          <h3>skills</h3>
+          these are some of my skills
+        </div>
+      </section>
       <div className="timeline" id="timelinez">
         <TimelineLeftItem
           company={"Collector Bank"}
