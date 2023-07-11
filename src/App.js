@@ -4,13 +4,14 @@ import mugshot from "./images/mugshot.jpg";
 import { TimelineLeftItem, TimelineRightItem } from "./IntersectBox.js";
 import useIntersect from "./hooks/useIntersect";
 import { TopIcons, SideIcons } from "./ContactIcons";
+import { Skills } from "./Skills";
 /*"International Software Testing Qualifications Board (ISTQB) - Foundation level"*/
 function moveTimeline() {
-  //var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  //var height =
-  //  document.documentElement.scrollHeight -
-  //  document.documentElement.clientHeight;
-  //var scrolled = (winScroll / height) * 100;
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  var scrolledTotal = (winScroll / height) * 100;
 
   const timeline = document.getElementById("timelinez");
   const viewportHeight = window.innerHeight;
@@ -18,17 +19,16 @@ function moveTimeline() {
   const elementOffsetTop = timeline.offsetTop;
   const elementHeight = timeline.offsetHeight;
 
-  // Calculate percentage of the element that's been seen
   const distance = scrollTop + viewportHeight - elementOffsetTop;
   const percentage = distance / (elementHeight / 100);
-  const scrolled = Math.min(100, Math.max(0, percentage - 10));
+  const scrolled = Math.min(100, Math.max(0, (percentage - 10) * 1.1));
 
   document.documentElement.style.setProperty(
     "--timeline-progress",
     scrolled + "%"
   );
 
-  if (scrolled === 0) {
+  if (scrolledTotal === 0) {
     document.documentElement.style.setProperty(
       "--timeline-arrow-color",
       "rgb(0, 0, 0, 1)"
@@ -41,7 +41,7 @@ function moveTimeline() {
   }
 }
 
-function ShowIntersecting(entry, show) {
+function ShowAboutMe(entry, show) {
   if (entry !== undefined) {
     if (entry.target !== undefined) {
       if (entry.isIntersecting) {
@@ -72,8 +72,8 @@ function App() {
       }
     }
     // Optimize
-    ShowIntersecting(abtMeEntry1, "show");
-    ShowIntersecting(abtMeEntry2, "show");
+    ShowAboutMe(abtMeEntry1, "show");
+    ShowAboutMe(abtMeEntry2, "show");
   }, [iconsEntry, abtMeEntry1, abtMeEntry2]);
 
   window.onscroll = function () {
@@ -107,11 +107,15 @@ function App() {
       <section className="aboutMeContainer" id="aboutMe">
         <div ref={abtMeRef1} className="aboutMeChild hidden">
           <h3>about me</h3>
-          this is some info about me
+          <p className="desc">I'm a full-stack developer based in Sweden.</p>
         </div>
         <div ref={abtMeRef2} className="aboutMeChild hidden">
+          <Skills />
           <h3>skills</h3>
-          these are some of my skills
+          <p className="desc">
+            My main areas of experties include C++, C#, .NET and Azure. I also
+            have solid knowledge in Python, React and Linux.
+          </p>
         </div>
       </section>
       <div className="timeline" id="timelinez">

@@ -9,7 +9,7 @@
 body,
 html {
   background-size: 100vw;
-  background-color: rgb(201, 201, 203);
+  background-color: rgb(235, 235, 235);
   color: rgb(4, 4, 4);
   /*font-family: "Chango", sans-serif;*/
   font-family: Coolvetica_b, Helvetica, sans-serif;
@@ -262,7 +262,7 @@ svg:hover #email {
   justify-content: center;
   align-items: center;
   padding-bottom: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20vh;
   background-color: white;
   /*justify-content: center;
   align-items: center;*/ /* To align vertically, if needed */
@@ -271,13 +271,16 @@ svg:hover #email {
 .aboutMeChild {
   flex: 1;
   /*text-align: center;*/
-  margin-left: 20px;
+  align-self: flex-start;
+  font-size: 25px;
+  margin-left: 5%;
+  margin-right: 5%;
   /*border: 6px solid rgb(13, 13, 13);*/
 }
 
 .aboutMeChild.hidden {
   opacity: 0;
-  transform: translateX(-20%);
+  transform: translateX(-10%);
   transition: all 1s;
 }
 
@@ -288,7 +291,106 @@ svg:hover #email {
 }
 
 .aboutMeChild.show:last-child {
-  transition-delay: 0.2s;
+  transition-delay: 0.25s;
+}
+
+.aboutMeChild > h3 {
+  margin: 20px 0px 0px 0px;
+
+  font-size: 50px;
+}
+
+.aboutMeChild > h3::after {
+  content: ".";
+  position: absolute;
+  color: var(--theme-color);
+}
+.aboutMeChild.hidden .skillsIcon {
+  position: absolute;
+  opacity: 0;
+}
+.aboutMeChild.show .skillsIcon {
+  position: absolute;
+  opacity: 0;
+  animation: fadeInOut 1.5s linear forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-25vh) rotate(-15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30vh) rotate(-20deg);
+  }
+}
+
+@keyframes fadeInOutFlip {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-25vh) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30vh) rotate(20deg);
+  }
+}
+
+.aboutMeChild.show .skillsIcon:nth-child(1) {
+  left: 30%;
+  animation: fadeInOutFlip 1.7s 1s linear forwards;
+}
+.aboutMeChild.show .skillsIcon:nth-child(2) {
+  left: 60%;
+  animation-delay: 1.4s;
+}
+.aboutMeChild.show .skillsIcon:nth-child(3) {
+  left: 50%;
+  animation-delay: 1.8s;
+}
+.aboutMeChild.show .skillsIcon:nth-child(4) {
+  left: 40%;
+  animation-delay: 2.2s;
+  animation-duration: 1.7;
+}
+.aboutMeChild.show .skillsIcon:nth-child(5) {
+  left: 30%;
+  animation-delay: 2.6s;
+}
+.aboutMeChild.show .skillsIcon:nth-child(6) {
+  left: 50%;
+  animation: fadeInOutFlip 1.3s 3s linear forwards;
+}
+.aboutMeChild.show .skillsIcon:nth-child(7) {
+  left: 60%;
+  animation-delay: 3.4s;
+}
+.aboutMeChild.show .skillsIcon:nth-child(8) {
+  left: 50%;
+  animation-delay: 3.8s;
+  animation-duration: 1.7;
+}
+.aboutMeChild.show .skillsIcon:nth-child(9) {
+  left: 60%;
+  animation: fadeInOutFlip 1.3s 4.2s linear forwards;
+}
+.aboutMeChild.show .skillsIcon:nth-child(10) {
+  left: 40%;
+  animation-delay: 4.6s;
+}
+.aboutMeChild.show .skillsIcon:nth-child(11) {
+  left: 50%;
+  animation-delay: 5s;
+  animation-duration: 1.3;
 }
 
 .timeline {
@@ -304,6 +406,12 @@ svg:hover #email {
   width: 10px;
   border-radius: 5px;
   background-color: black;
+  /*background: linear-gradient(
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0.2) 100%
+  );*/
   /*background-color: blue;
   box-shadow: 0 0 10px blue, 0 0 5px blue, 0 0 5px blue;*/
   top: 0;
