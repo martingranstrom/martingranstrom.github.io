@@ -129,6 +129,7 @@ function App() {
           company={"Zenuity"}
           location={"Gothenburg, Sweden | 2017 - 2020"}
           content={"Software developer"}
+          patch={"ISTQB Cert"}
         />
         <TimelineLeftItem
           company={"MSc Biomedical Engineering"}
@@ -138,13 +139,24 @@ function App() {
           content={"MSc Biomedical Engineering"}
         />
         <TimelineRightItem
+          company={"Heliospectra"}
+          location={"Gothenburg, Sweden | jan 2017 - jun 2017"}
+          content={"Master thesis"}
+        />
+        <TimelineLeftItem
           company={"BSc Mechatronics"}
           location={
             "Chalmers University of Technology - Gothenburg, Sweden | 2012 - 2015"
           }
           content={"BSc Mechatronics"}
         />
+        <TimelineRightItem
+          company={"Göteborg Energi"}
+          location={"Gothenburg, Sweden | mar 2015 - jun 2015"}
+          content={"Bachelor thesis"}
+        />
       </div>
+      <div className="footer"></div>
     </>
   );
 }
