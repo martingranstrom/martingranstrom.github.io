@@ -114,7 +114,7 @@ function App() {
           <h3>skills</h3>
           <p className="desc">
             My main areas of experties include C++, C#, .NET and Azure. I also
-            have solid knowledge in Python, React and Linux.
+            have solid knowledge in Python, React JS and Linux.
           </p>
         </div>
       </section>
