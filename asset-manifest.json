@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.86c12038.css",
-    "main.js": "/static/js/main.10bfaa72.js",
+    "main.js": "/static/js/main.e55bdc6f.js",
     "static/js/787.a71561b8.chunk.js": "/static/js/787.a71561b8.chunk.js",
     "static/media/mugshot.jpg": "/static/media/mugshot.db4810f2e7ebb1cbe71d.jpg",
     "static/media/blazorLogo.png": "/static/media/blazorLogo.9f6c714a50187f38afc1.png",
@@ -20,11 +20,11 @@
     "index.html": "/index.html",
     "static/media/terraformLogo.svg": "/static/media/terraformLogo.76fc0c987b75018c742e027ad35c5239.svg",
     "main.86c12038.css.map": "/static/css/main.86c12038.css.map",
-    "main.10bfaa72.js.map": "/static/js/main.10bfaa72.js.map",
+    "main.e55bdc6f.js.map": "/static/js/main.e55bdc6f.js.map",
     "787.a71561b8.chunk.js.map": "/static/js/787.a71561b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.86c12038.css",
-    "static/js/main.10bfaa72.js"
+    "static/js/main.e55bdc6f.js"
   ]
 }
